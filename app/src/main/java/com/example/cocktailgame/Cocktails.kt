@@ -1,4 +1,4 @@
 package com.example.cocktailgame
 
-class Cocktails {
+class Cocktails (number: String, drink: String, image:String ){
 }

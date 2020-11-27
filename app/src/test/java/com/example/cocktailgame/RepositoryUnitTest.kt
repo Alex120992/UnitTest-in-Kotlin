@@ -45,7 +45,7 @@ class RepositoryUnitTest {
         val newHighScore = 10
 
         val spyRepository = spy(repository)
-        // Делаем возврат значения 100 всегда при вызове метода getHighScore()
+        // Делаем замыкание значения 100 всегда при вызове метода getHighScore()
         doReturn (previouslySavedHighSvore).whenever(spyRepository).getHighScore()
 
         spyRepository.saveHighScore(newHighScore)

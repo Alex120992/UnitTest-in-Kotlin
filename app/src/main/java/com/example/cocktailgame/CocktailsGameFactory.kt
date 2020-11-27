@@ -1,10 +1,11 @@
 package com.example.cocktailgame
 
 interface CocktailsGameFactory  {
-    fun buildGame(callback: CocktailsGameFactory.ReposiryCallBackCocktails<Any?, Any?>)
+    fun buildGame(callback: CallBack)
 
-    interface ReposiryCallBackCocktails<T, U> {
-        fun onSuccess (cocktailList:T)
-        fun onError(e: U)
+
+    interface CallBack {
+        fun onSuccess (game: Game)
+        fun onError()
     }
 }

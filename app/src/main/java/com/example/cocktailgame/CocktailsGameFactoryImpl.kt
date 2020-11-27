@@ -2,20 +2,19 @@ package com.example.cocktailgame
 
 
 class CocktailsGameFactoryImpl(private val repository: CocktailsRepository) : CocktailsGameFactory {
-    override fun buildGame(callback: CocktailsGameFactory.ReposiryCallBackCocktails<Any?, Any?>) {
-        repository.getAlcoholic(object :
-            CocktailsGameFactory.ReposiryCallBackCocktails<List<Cocktails>, String> {
-
+    override fun buildGame(callback: CocktailsGameFactory.CallBack) {
+        repository.getAlcoholic(object : RepositoryCallBackCocktails<List<Cocktails>,String>{
             override fun onSuccess(cocktailList: List<Cocktails>) {
-                TODO("Not yet implemented")
+                callback.onSuccess(Game(emptyList()))
             }
 
             override fun onError(e: String) {
-                TODO("Not yet implemented")
+                callback.onError()
             }
 
         })
     }
+
 
 
 }
