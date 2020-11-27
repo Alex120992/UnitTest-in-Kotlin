@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>SharedPreferences.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #808080; font-weight: bold; font-style: italic;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #000000;}
+.s4 { color: #000080; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SharedPreferences.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/**</span>
+         <span class="s0">* Commit your preferences changes back from this Editor to the</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">SharedPreferences} object it is editing.  This atomically</span>
+         <span class="s0">* performs the requested modifications, replacing whatever is currently</span>
+         <span class="s0">* in the SharedPreferences.</span>
+         <span class="s0">*</span>
+         <span class="s0">* </span><span class="s2">&lt;p&gt;</span><span class="s0">Note that when two editors are modifying preferences at the same</span>
+         <span class="s0">* time, the last one to call apply wins.</span>
+         <span class="s0">*</span>
+         <span class="s0">* </span><span class="s2">&lt;p&gt;</span><span class="s0">Unlike {</span><span class="s1">@link </span><span class="s0">#commit}, which writes its preferences out</span>
+         <span class="s0">* to persistent storage synchronously, {</span><span class="s1">@link </span><span class="s0">#apply}</span>
+         <span class="s0">* commits its changes to the in-memory</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">SharedPreferences} immediately but starts an</span>
+         <span class="s0">* asynchronous commit to disk and you won't be notified of</span>
+         <span class="s0">* any failures.  If another editor on this</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">SharedPreferences} does a regular {</span><span class="s1">@link </span><span class="s0">#commit}</span>
+         <span class="s0">* while a {</span><span class="s1">@link </span><span class="s0">#apply} is still outstanding, the</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">#commit} will block until all async commits are</span>
+         <span class="s0">* completed as well as the commit itself.</span>
+         <span class="s0">*</span>
+         <span class="s0">* </span><span class="s2">&lt;p&gt;</span><span class="s0">As {</span><span class="s1">@link </span><span class="s0">SharedPreferences} instances are singletons within</span>
+         <span class="s0">* a process, it's safe to replace any instance of {</span><span class="s1">@link </span><span class="s0">#commit} with</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">#apply} if you were already ignoring the return value.</span>
+         <span class="s0">*</span>
+         <span class="s0">* </span><span class="s2">&lt;p&gt;</span><span class="s0">You don't need to worry about Android component</span>
+         <span class="s0">* lifecycles and their interaction with </span><span class="s2">&lt;code&gt;</span><span class="s0">apply()</span><span class="s2">&lt;/code&gt;</span>
+         <span class="s0">* writing to disk.  The framework makes sure in-flight disk</span>
+         <span class="s0">* writes from </span><span class="s2">&lt;code&gt;</span><span class="s0">apply()</span><span class="s2">&lt;/code&gt; </span><span class="s0">complete before switching</span>
+         <span class="s0">* states.</span>
+         <span class="s0">*</span>
+         <span class="s0">* </span><span class="s2">&lt;p class='note'&gt;</span><span class="s0">The SharedPreferences.Editor interface</span>
+         <span class="s0">* isn't expected to be implemented directly.  However, if you</span>
+         <span class="s0">* previously did implement it and are now getting errors</span>
+         <span class="s0">* about missing </span><span class="s2">&lt;code&gt;</span><span class="s0">apply()</span><span class="s2">&lt;/code&gt;</span><span class="s0">, you can simply call</span>
+         <span class="s0">* {</span><span class="s1">@link </span><span class="s0">#commit} from </span><span class="s2">&lt;code&gt;</span><span class="s0">apply()</span><span class="s2">&lt;/code&gt;</span><span class="s0">.</span>
+         <span class="s0">*/</span></pre>
+</body>
+</html>

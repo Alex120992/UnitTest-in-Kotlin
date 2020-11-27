@@ -76,6 +76,7 @@ class GameUnitTest {
     @Test
     fun whenAnsweringCorrectly_shouldIncrementCurrentScore() {
         val question = mock<Question>() // можно так мокать
+            // при вызове метода question.answer он всегда возвращает true
         whenever(question.answer(anyString())).thenReturn(true)
         val score:Score = mock() // можно так мокать
         val game = Game(listOf(question), score)
